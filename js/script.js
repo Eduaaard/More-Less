@@ -2,7 +2,7 @@
 
 const UserWantPlay = confirm('Сыгрыем в игру "Больше Меньше"?')
 if (UserWantPlay == true){
-    const NumForGame = prompt("дайте Другому чедловеку загадать число от 0 до 50!", "")
+    const NumForGame = parseInt(prompt("дайте Другому человеку загадать число от 0 до 50!", ""))
     if (NumForGame > 50) {
         alert("Не загадывайте число, которе больше 50!")
     }else if (NumForGame <= 50){
@@ -20,11 +20,10 @@ if (UserWantPlay == true){
                                 let choose = confirm("Меньше, хотите продолжить?")
                                 if (choose == true) {
                                     let numUser = prompt("Я до сих пор верю в вас, но осталось 0 попыток", "")
-                                    if (numUser > NumForGame) {
-                                        confirm(`К сожалению вы не угадали, вам загадали ${NumForGame}`)
-                                    } else if (numUser < NumForGame) {
-                                        confirm(`К сожалению вы не угадали, вам загадали ${NumForGame}`)
-                                    } else if (numUser == NumForGame) { alert("Молодец, вы угадали") }
+                                    if (numUser == NumForGame) {
+                                        alert("Молодец, вы угадали")
+                                    } else if (numUser != NumForGame) {prompt(`К сожалению вы не угадали, вам загадали ${NumForGame}`)}
+                                    console.log(NumForGame)
                                 } else if (choose == false) {
                                     alert("Спасибо, что вы поучаствовали")
                                 } else if (numUser == NumForGame) { alert("Молодец, вы угадали") }
